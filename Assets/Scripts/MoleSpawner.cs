@@ -28,6 +28,7 @@ public class MoleSpawner : MonoBehaviour
 
     void SpawnMoles()
     {
+        //Instantiates a random mole on a random spawnpoint
         Instantiate(moles[Random.Range(0, moles.Length)], spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position, Quaternion.identity);
         currentMoles++;
     }

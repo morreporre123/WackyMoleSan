@@ -6,14 +6,14 @@ public class Kill : MonoBehaviour
 {
     public CameraShake cameraShake;
 
-    [SerializeField] float shakeDur;
-    [SerializeField] float shakeMag;
+    public float shakeDur;
+    public float shakeMag;
 
-    void Update()
+
+    private void OnMouseDown()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            StartCoroutine(cameraShake.Shake(shakeDur, shakeMag));
-        }
+        Destroy(gameObject);
+        StartCoroutine(cameraShake.Shake(shakeDur, shakeMag));
     }
+
 }
