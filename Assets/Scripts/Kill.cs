@@ -12,8 +12,10 @@ public class Kill : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Destroy(gameObject);
-        StartCoroutine(cameraShake.Shake(shakeDur, shakeMag));
+        if(gameObject.tag == "Mole")
+        {
+            StartCoroutine(cameraShake.Shake(shakeDur, shakeMag));
+            Destroy(gameObject);
+        }
     }
-
 }

@@ -30,7 +30,7 @@ public class MoleSpawner : MonoBehaviour
     {
         //Instantiates a random mole on a random spawnpoint
         Instantiate(moles[Random.Range(0, moles.Length)], spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position, Quaternion.identity);
-        currentMoles++;
+        currentMoles++;     //Increases this variable so the game doesn't get overflowed with moles
     }
 
 }
