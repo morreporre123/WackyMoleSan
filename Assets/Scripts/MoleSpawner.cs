@@ -4,33 +4,29 @@ using UnityEngine;
 
 public class MoleSpawner : MonoBehaviour
 {
-    #region Variables
+    //Anton
 
-    private float currentMoles = 0;
+    #region Variables
 
     public GameObject[] moles;
     public GameObject[] spawnPoints;
+    public bool[] filled;
 
     #endregion
 
     void Update()
     {
-        if (currentMoles <= 3 && Input.GetKeyDown(KeyCode.Space))
-        {
-            SpawnMoles();
-        }
+        int number = Random.Range(0, spawnPoints.Length);
 
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.Space) && !filled[number])
         {
-            currentMoles--;
+            SpawnMoles(number);
         }
     }
 
-    void SpawnMoles()
+    void SpawnMoles(int index)
     {
-        //Instantiates a random mole on a random spawnpoint
-        Instantiate(moles[Random.Range(0, moles.Length)], spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position, Quaternion.identity);
-        currentMoles++;     //Increases this variable so the game doesn't get overflowed with moles
+        Instantiate(moles[Random.Range(0, moles.Length)], spawnPoints[index].transform.position, Quaternion.identity);                //Instantiates a random mole on a random spawnpoint
+        filled[index] = true;
     }
-
 }
