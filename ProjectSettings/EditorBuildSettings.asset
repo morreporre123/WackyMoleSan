@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Mauritz_poop_scen.unity
+    guid: 812c4857a6b6ebb43adfea36f3069ae3
+  - enabled: 1
+    path: Assets/Testscen123.unity
+    guid: 78289a15e72545c4ca1cfda096a1c6f9
   m_configObjects: {}
