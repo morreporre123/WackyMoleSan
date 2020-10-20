@@ -6,27 +6,43 @@ public class MoleSpawner : MonoBehaviour
 {
     //Anton
 
-    #region Variables
+    public float spawnrate, subtract, timer;
 
-    public GameObject[] moles;
+    public GameObject mole;
     public GameObject[] spawnPoints;
-    public bool[] filled;
 
-    #endregion
+    private bool allowSpawning = true;
 
     void Update()
     {
-        int number = Random.Range(0, spawnPoints.Length);
+        timer += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Space) && !filled[number])
+        if (timer >= spawnrate && allowSpawning)
         {
-            SpawnMoles(number);
+            SpawnMoles();
         }
+
+        if(spawnrate <= 1)
+        {
+            subtract = 0;
+            spawnrate = 1;
+        }
+
+        /*if (Player.lives >= 1)
+        {
+            Player.lives--;
+        }
+        else if (Player.lives <= 0)
+        {
+            //Game over
+        }*/
     }
 
-    void SpawnMoles(int index)
+    void SpawnMoles()
     {
-        Instantiate(moles[Random.Range(0, moles.Length)], spawnPoints[index].transform.position, Quaternion.identity);                //Instantiates a random mole on a random spawnpoint
-        filled[index] = true;
+        GameObject currentMole = Instantiate(mole, spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position, Quaternion.identity);                //Instantiates a random mole on a random spawnpoint
+        spawnrate -= subtract;
+        timer = 0;
+        Destroy(currentMole, spawnrate);
     }
 }

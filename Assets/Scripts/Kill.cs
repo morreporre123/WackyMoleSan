@@ -4,23 +4,20 @@ using UnityEngine;
 
 public class Kill : MonoBehaviour
 {
+    //Anton
+
     public CameraShake cameraShake;
 
-    public float shakeDur;
-    public float shakeMag;
-
-    public float timer;
+    public float shakeDur, shakeMag, timer;
 
     private bool timerStart = false;
 
 
     private void OnMouseDown()
     {
-        if(gameObject.tag == "Mole")
-        {
-            StartCoroutine(cameraShake.Shake(shakeDur, shakeMag));
-            timerStart = true;
-        }
+        Player.scorePoints++;
+        timerStart = true;
+        StartCoroutine(cameraShake.Shake(shakeDur, shakeMag));
     }
 
     private void Update()
