@@ -5,10 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Mauritz_poop_scen.unity
+  - enabled: 0
+    path: Assets/Scenes/Mauritz_poop_scen.unity
     guid: 812c4857a6b6ebb43adfea36f3069ae3
-  - enabled: 1
-    path: Assets/Testscen123.unity
+  - enabled: 0
+    path: Assets/Scenes/Testscen123.unity
     guid: 78289a15e72545c4ca1cfda096a1c6f9
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 61d8dc29822caf84798ce82dbeae9c95
+  - enabled: 1
+    path: "Assets/Scenes/B\xE4ttre scen.unity"
+    guid: 9aaece49c90592e4a9feee1a245742a6
   m_configObjects: {}
