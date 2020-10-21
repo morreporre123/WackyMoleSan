@@ -1,6 +1,17 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: 320ea350dc1f92d42acfbff6beb3dc33
 NativeFormatImporter:
+=======
+<<<<<<< Updated upstream:Assets/Graphics/Button.meta
+guid: 50c72193c4bf5924b938aecac1510f2e
+folderAsset: yes
+DefaultImporter:
+=======
+guid: 320ea350dc1f92d42acfbff6beb3dc33
+NativeFormatImporter:
+>>>>>>> Stashed changes:Assets/Graphics/MoleAnims/MoleSpawn/Mole_Spawn.anim.meta
+>>>>>>> Stashed changes
   externalObjects: {}
   mainObjectFileID: 0
   userData: 

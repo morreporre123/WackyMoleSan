@@ -32,7 +32,10 @@ public class powerUpHandler : MonoBehaviour // Lucas
                 spawner.spawnrate = defSpawnrate;
                 break;
             case powerUpScriptable.Type.freeze:
-                //insert changed values
+                
+                break;
+            case powerUpScriptable.Type.Anton:
+                
                 break;
         }
     }

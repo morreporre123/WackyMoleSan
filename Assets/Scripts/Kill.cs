@@ -9,19 +9,17 @@ public class Kill : MonoBehaviour
     public CameraShake cameraShake;
 
     public float shakeDur, shakeMag, timer;
-
+    float pointTimer = 100;
     private bool timerStart = false;
-
-
     private void OnMouseDown()
     {
-        Player.scorePoints++;
+        Player.scorePoints += pointTimer * 100;
         timerStart = true;
         StartCoroutine(cameraShake.Shake(shakeDur, shakeMag));
     }
-
     private void Update()
     {
+        pointTimer -= Time.deltaTime;
         if (timerStart)
         {
             timer += Time.deltaTime;

@@ -12,7 +12,8 @@ public class powerUpScriptable : ScriptableObject // Lucas
         empty,
         freeze,
         Hej,
-        test
+        test,
+        Anton
     }
     public Type type;
 }

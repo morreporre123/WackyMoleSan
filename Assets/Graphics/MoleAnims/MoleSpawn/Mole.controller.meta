@@ -1,6 +1,22 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: 2e290ab7ea18d6445a942e2c75ab724e
 NativeFormatImporter:
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Graphics/MoleAnims/MoleSpawn/Mole.controller.meta
+guid: 2e290ab7ea18d6445a942e2c75ab724e
+NativeFormatImporter:
+=======
+guid: 39699cc737fed224ca5c560bbc221f20
+folderAsset: yes
+DefaultImporter:
+>>>>>>> ff318f8d243594049886ae2636cbf0168ae44981:Assets/Graphics/MoleAnims/MoleSpawn.meta
+=======
+guid: 2e290ab7ea18d6445a942e2c75ab724e
+NativeFormatImporter:
+>>>>>>> ff318f8d243594049886ae2636cbf0168ae44981
+>>>>>>> Stashed changes
   externalObjects: {}
   mainObjectFileID: 0
   userData: 

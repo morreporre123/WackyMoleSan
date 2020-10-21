@@ -1,5 +1,18 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: ad0c470f52008b542a517b9c39345d6a
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Scenes/AnimationScene.unity.meta
+guid: ad0c470f52008b542a517b9c39345d6a
+=======
+guid: ce1b90a6698ebdf4080cc2f387583ca2
+folderAsset: yes
+>>>>>>> ff318f8d243594049886ae2636cbf0168ae44981:Assets/Graphics/MoleAnims.meta
+=======
+guid: ad0c470f52008b542a517b9c39345d6a
+>>>>>>> ff318f8d243594049886ae2636cbf0168ae44981
+>>>>>>> Stashed changes
 DefaultImporter:
   externalObjects: {}
   userData: 

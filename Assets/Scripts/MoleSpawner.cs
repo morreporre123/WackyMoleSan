@@ -11,6 +11,7 @@ public class MoleSpawner : MonoBehaviour
     public GameObject mole;
     public GameObject[] spawnPoints;
 
+    public bool[] bArr;
     private bool allowSpawning = true;
 
     void Update()
@@ -37,10 +38,10 @@ public class MoleSpawner : MonoBehaviour
             //Game over
         }*/
     }
-
     void SpawnMoles()
     {
-        GameObject currentMole = Instantiate(mole, spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position, Quaternion.identity);                //Instantiates a random mole on a random spawnpoint
+        int i = Random.Range(0, spawnPoints.Length);
+        GameObject currentMole = Instantiate(mole, spawnPoints[i].transform.position, Quaternion.identity);                //Instantiates a random mole on a random spawnpoint
         spawnrate -= subtract;
         timer = 0;
         Destroy(currentMole, spawnrate);
