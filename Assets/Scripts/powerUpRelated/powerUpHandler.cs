@@ -15,13 +15,14 @@ public class powerUpHandler : MonoBehaviour // Lucas
     private void Start()
     {
         defSpawnrate = spawner.spawnrate; defSubtract = spawner.subtract; defTimer = spawner.timer;
+        pusType = powerUpScriptable.Type.empty;
     }
-    public void execute()
+    public void randomPu(SpriteRenderer sr)
     {
         pusType = powerUpScriptable.Type.empty;
         current = sTypes[Random.Range(0, sTypes.Length)];
-        //powerUpImage.Sprite = currentPowerUp.Sprite;
-        StartCoroutine(puDuration(current.duration, current.type));
+        current.powerUpSprite = sr.sprite;
+        StartCoroutine(startPowerUp(current.duration, current.type));
     }
     private void Update()
     {
@@ -39,7 +40,7 @@ public class powerUpHandler : MonoBehaviour // Lucas
                 break;
         }
     }
-    IEnumerator puDuration(float t, powerUpScriptable.Type type)
+    public IEnumerator startPowerUp(float t, powerUpScriptable.Type type)
     {
         pusType = type;
         yield return new WaitForSeconds(t);

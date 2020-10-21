@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour     //Anton
 {
     public Text livesText;
     public Text scoreText;
@@ -14,24 +14,12 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-<<<<<<< Updated upstream
-        //Cursor.
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        //Cursor.SetCursor(mouseCursor.texture,cursorMode: CursorMode.Auto);
-=======
-        //Cursor.
->>>>>>> ff318f8d243594049886ae2636cbf0168ae44981
-=======
-        //Cursor.
->>>>>>> ff318f8d243594049886ae2636cbf0168ae44981
->>>>>>> Stashed changes
+        Cursor.SetCursor(mouseCursor.texture, Vector2.zero, CursorMode.Auto);   //Lucas
     }
 
     private void Update()
     {
-        print(lives);
+        //print(lives);
         livesText.text = "Lives: " + lives;
         scoreText.text = "Score: " + scorePoints;
     }
