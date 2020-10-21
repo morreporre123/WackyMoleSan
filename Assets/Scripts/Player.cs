@@ -7,8 +7,15 @@ public class Player : MonoBehaviour
 {
     public Text livesText;
     public Text scoreText;
+    public Sprite mouseCursor;
     static public int scorePoints;
     static public int lives = 3;
+
+
+    private void Start()
+    {
+        
+    }
 
     private void Update()
     {
