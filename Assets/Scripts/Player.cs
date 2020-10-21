@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        
+        //Cursor.
     }
 
     private void Update()
