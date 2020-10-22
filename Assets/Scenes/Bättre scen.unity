@@ -572,7 +572,7 @@ MonoBehaviour:
   spawnTimer: 2
   spawnMultiplier: 0
   spawnMultiplierIncrease: 0.005
-  chanceForPowerUp: 100
+  chanceForPowerUp: 2
 --- !u!1 &1200593622
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,6 +786,8 @@ MonoBehaviour:
   livesText: {fileID: 761363836}
   scoreText: {fileID: 1983465334}
   mouseCursor: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  scorePoints: 0
+  lives: 3
 --- !u!212 &1516495117
 SpriteRenderer:
   m_ObjectHideFlags: 0

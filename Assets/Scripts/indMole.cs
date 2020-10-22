@@ -4,25 +4,45 @@ using UnityEngine;
 
 public class indMole : MonoBehaviour    //Lucas
 {
-    float timer = 2;
+    float despawnTimer = 2;
     public bool canSpawn = true;
     private moleSpawnerv2 spawner;
+    private Player player;
+
+    bool canDespawn = false, startTimer = false;
     private void Awake()
     {
         spawner = FindObjectOfType<moleSpawnerv2>();
+        player = FindObjectOfType<Player>();
     }
-    public IEnumerator spawn(GameObject mole, float subtract)
+    private void Update()
     {
-        timer = Mathf.Clamp(timer, 0f, 5f);
+        if (startTimer)
+        {
+            despawnTimer -= Time.deltaTime;
+        }
+        if(despawnTimer <= 0)
+        {
+            canDespawn = true;
+        }
+    }
+    public void spawn(GameObject mole, float subtract)
+    {
+
+        despawnTimer = Mathf.Clamp(despawnTimer, 0f, 5f);
         GameObject newMole = Instantiate(mole, transform);
         canSpawn = false;
-        yield return new WaitForSeconds(timer);
-        timer -= spawner.spawnMultiplierIncrease/2;
-        if(newMole != null)
+        startTimer = true;
+
+        if (canDespawn)
         {
-            Destroy(newMole);
-            // tappa liv ?
+            despawnTimer -= spawner.spawnMultiplierIncrease / 2;
+            if (newMole != null)
+            {
+                player.lives--;
+                Destroy(newMole);
+            }
+            canSpawn = true;
         }
-        canSpawn = true;
     }
 }

@@ -8,8 +8,8 @@ public class Player : MonoBehaviour     //Anton
     public Text livesText;
     public Text scoreText;
     public Sprite mouseCursor;
-    static public float scorePoints;
-    static public int lives = 3;
+    public float scorePoints;
+    public int lives = 3;
 
 
     private void Start()
@@ -21,6 +21,6 @@ public class Player : MonoBehaviour     //Anton
     {
         //print(lives);
         livesText.text = "Lives: " + lives;
-        scoreText.text = "Score: " + scorePoints;
+        scoreText.text = "Score: " + scorePoints.ToString("0");
     }
 }

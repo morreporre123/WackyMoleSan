@@ -35,12 +35,12 @@ public class moleSpawnerv2 : MonoBehaviour  //Lucas
         int c = Random.Range(0, 100);
         if(c < chanceForPowerUp)
         {
-            StartCoroutine(ableToSpawn[i].spawn(powerUpPrefab, spawnMultiplier));
+            ableToSpawn[i].spawn(powerUpPrefab, spawnMultiplier);
             print("Spawned powerup");
         }
         else
         {
-            StartCoroutine(ableToSpawn[i].spawn(molePrefab, spawnMultiplier));
+            ableToSpawn[i].spawn(molePrefab, spawnMultiplier);
             print("spawned mole");
         }
     }
