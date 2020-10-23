@@ -30,7 +30,7 @@ public class spawnManager : MonoBehaviour
         int i = Random.Range(0, moles.Length);
         spawnTime =- 0.25f;
 
-        int randomEvent = Random.Range(0, 10);
+        int randomEvent = Random.Range(0, 8);
         if (moles[i].childCount == 0)
         {
             if (randomEvent < 8)
