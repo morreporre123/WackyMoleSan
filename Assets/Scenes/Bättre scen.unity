@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 1
+  despawnTimer: 2
 --- !u!1 &248835561
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 1
+  despawnTimer: 2
 --- !u!1 &558377398
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,6 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 1
+  despawnTimer: 2
 --- !u!1 &761363834
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,6 +505,7 @@ GameObject:
   - component: {fileID: 883970180}
   - component: {fileID: 883970179}
   - component: {fileID: 883970181}
+  - component: {fileID: 883970182}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -553,7 +557,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 883970178}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08f1ffb742dddd944bf6db3586640d03, type: 3}
   m_Name: 
@@ -570,9 +574,36 @@ MonoBehaviour:
   powerUpPrefab: {fileID: 2654240547247613103, guid: 078cb39e1d95d2f40ba9b60557959145,
     type: 3}
   spawnTimer: 2
-  spawnMultiplier: 0
-  spawnMultiplierIncrease: 0.005
-  chanceForPowerUp: 2
+  originSpawnTimer: 0
+  spawnMultiplier: 0.05
+  chanceForPowerUp: 10
+--- !u!114 &883970182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883970178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73f245667b4762a4c8d8fe1139ca48e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moles:
+  - {fileID: 1371859704}
+  - {fileID: 2092995739}
+  - {fileID: 2036976808}
+  - {fileID: 694830387}
+  - {fileID: 370834074}
+  - {fileID: 48628667}
+  prefabMole: {fileID: 3966819558875623027, guid: 0891b35dd373dd1478388f1a13c544cb,
+    type: 3}
+  prefabPowerUp: {fileID: 2654240547247613103, guid: 078cb39e1d95d2f40ba9b60557959145,
+    type: 3}
+  spawnTime: 2
+  maxPointsFromMole: 10
+  spawnTimeSubtract: 0
+  spawnTimeUntilZero: 320
 --- !u!1 &1200593622
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,6 +684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 1
+  despawnTimer: 2
 --- !u!1 &1450830359
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,6 +1164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 1
+  despawnTimer: 2
 --- !u!1 &2092995738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,6 +1209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSpawn: 1
+  despawnTimer: 2
 --- !u!1 &2141408631
 GameObject:
   m_ObjectHideFlags: 0

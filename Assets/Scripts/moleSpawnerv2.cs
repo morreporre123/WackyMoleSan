@@ -6,20 +6,29 @@ public class moleSpawnerv2 : MonoBehaviour  //Lucas
 
     private List<indMole> ableToSpawn = new List<indMole>();
 
+    private Player prefs;
+
     public GameObject molePrefab, powerUpPrefab;
 
-    public float spawnTimer = 2, spawnMultiplier, spawnMultiplierIncrease;
+    public float spawnTimer, originSpawnTimer, spawnMultiplier;
 
     public int chanceForPowerUp;
+    private void Awake()
+    {
+        prefs = FindObjectOfType<Player>();
+        originSpawnTimer = spawnTimer;
+    }
     private void Update()
     {
-        spawnMultiplier = Mathf.Clamp(spawnMultiplier, 0, 1.6f);
+        float l = 0;
+
+        spawnTimer = Mathf.Clamp(spawnTimer, 0, 1.6f);
         spawnTimer -= Time.deltaTime;
         if(spawnTimer <= 0)
         {
+            l++;
             spawnMoles();
-            spawnTimer = 2 - spawnMultiplier;
-            spawnMultiplier += spawnMultiplierIncrease;
+            spawnTimer = originSpawnTimer - l * spawnMultiplier;
         }
     }
     public void spawnMoles()
@@ -35,13 +44,27 @@ public class moleSpawnerv2 : MonoBehaviour  //Lucas
         int c = Random.Range(0, 100);
         if(c < chanceForPowerUp)
         {
-            ableToSpawn[i].spawn(powerUpPrefab, spawnMultiplier);
+            StartCoroutine(ableToSpawn[i].spawn(powerUpPrefab, spawnMultiplier));
             print("Spawned powerup");
         }
         else
         {
-            ableToSpawn[i].spawn(molePrefab, spawnMultiplier);
+            StartCoroutine(ableToSpawn[i].spawn(molePrefab, spawnMultiplier));
             print("spawned mole");
+        }
+    }
+    public void despawn(GameObject despawnObject, bool isClicked, float points)
+    {
+        print("despawned");
+        Destroy(despawnObject);
+        if (isClicked)
+        {
+            prefs.scorePoints += points;
+            //camerashake
+        }
+        else
+        {
+            prefs.lives--;
         }
     }
 }

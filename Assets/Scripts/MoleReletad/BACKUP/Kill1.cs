@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Kill : MonoBehaviour
+public class Kill1 : MonoBehaviour
 {
     //Anton
     private Player player;
@@ -11,7 +11,9 @@ public class Kill : MonoBehaviour
     public CameraShake cameraShake;
 
     public float shakeDur, shakeMag, timer;
-    float pointTimer = 100;
+
+    public float pointTimer;
+
     private bool timerStart = false;
     public bool isMole;
     private void Awake()
@@ -33,7 +35,7 @@ public class Kill : MonoBehaviour
     }
     private void Update()
     {
-        pointTimer -= Time.deltaTime * (100 / spawner.spawnMultiplier);
+        pointTimer -= Time.deltaTime;
         if (timerStart)
         {
             timer += Time.deltaTime;
@@ -42,8 +44,8 @@ public class Kill : MonoBehaviour
         {
             timer = 0;
             timerStart = false;
-            player.scorePoints += pointTimer;
             Destroy(gameObject);
+            player.scorePoints += pointTimer;
         }
     }
 }

@@ -1,8 +1,8 @@
-﻿using System.Collections;
+﻿/* using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class indMole : MonoBehaviour    //Lucas
+public class indMole1 : MonoBehaviour    //Lucas
 {
     float despawnTimer = 2;
     public bool canSpawn = true;
@@ -28,21 +28,22 @@ public class indMole : MonoBehaviour    //Lucas
     }
     public void spawn(GameObject mole, float subtract)
     {
-
+        Kill newKill = mole.GetComponent<Kill>();
         despawnTimer = Mathf.Clamp(despawnTimer, 0f, 5f);
         GameObject newMole = Instantiate(mole, transform);
         canSpawn = false;
         startTimer = true;
-
+        newKill.pointTimer = despawnTimer;
         if (canDespawn)
         {
             despawnTimer -= spawner.spawnMultiplierIncrease / 2;
             if (newMole != null)
             {
-                player.lives--;
+                canSpawn = true;
                 Destroy(newMole);
+                player.lives--;
             }
-            canSpawn = true;
         }
     }
 }
+*/
