@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class spawnManager : MonoBehaviour
@@ -29,13 +30,30 @@ public class spawnManager : MonoBehaviour
         int i = Random.Range(0, moles.Length);
         spawnTime =- 0.25f;
 
-        int randomEvent = Random.Range(0, 8);
+        int randomEvent = Random.Range(0, 10);
         if (moles[i].childCount == 0)
         {
-            GameObject newMole = Instantiate(prefabMole, moles[i], false);
-            clickable newOnMole = newMole.GetComponent<clickable>();
-            newOnMole.live(despawnTime, maxPointsFromMole);
-
+            if (randomEvent < 8)
+            {
+                GameObject newMole = Instantiate(prefabMole, moles[i], false);
+                clickable newOnMole = newMole.GetComponent<clickable>();
+                newOnMole.live(despawnTime, maxPointsFromMole);
+            }
+            if (randomEvent == 9)
+            {
+                GameObject newMole = Instantiate(prefabPowerUp, moles[i], false);
+                clickable newOnMole = newMole.GetComponent<clickable>();
+                newOnMole.live(despawnTime, maxPointsFromMole);
+            }
+            if (randomEvent == 10)
+            {
+                for (int c = 0; c > 3; c++)
+                {
+                    GameObject newMole = Instantiate(prefabPowerUp, moles[i+c], false);
+                    clickable newOnMole = newMole.GetComponent<clickable>();
+                    newOnMole.live(despawnTime, maxPointsFromMole);
+                }
+            }
         }
         else
         {
