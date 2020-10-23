@@ -7,11 +7,12 @@ public class clickable : MonoBehaviour
     //Lucas & Anton
     Player prefs;
     [SerializeField] Animator anim;
-    [SerializeField] CameraShake camShake;
+    CameraShake camShake;
     bool start, isDead = false;
     float timeToLive, o_timeToLive, maxPoints, timer;
     private void Start()
     {
+        camShake = FindObjectOfType<CameraShake>();
         anim = GetComponent<Animator>();
     }
     private void Awake()
@@ -40,10 +41,10 @@ public class clickable : MonoBehaviour
     private void OnMouseDown()
     {
         isDead = true;
-        StartCoroutine(camShake.Shake(0.1f, 0.3f));
         anim.SetBool("IsDead", true);
         Destroy(gameObject, 0.3f);
         prefs.scorePoints += (timeToLive / o_timeToLive) * maxPoints;
+        StartCoroutine(camShake.Shake(0.1f, 0.3f));
     }
     public void live(float t, float maxP)
     {
