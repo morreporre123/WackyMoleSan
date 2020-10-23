@@ -5,7 +5,7 @@ using UnityEngine;
 public class powerUpHandler : MonoBehaviour // Lucas
 {
     #region Default values
-    public MoleSpawner spawner;
+    public spawnManager spawner;
     private float defSpawnrate, defSubtract, defTimer;
     #endregion
 
@@ -14,7 +14,7 @@ public class powerUpHandler : MonoBehaviour // Lucas
     powerUpScriptable.Type pusType;
     private void Start()
     {
-        defSpawnrate = spawner.spawnrate; defSubtract = spawner.subtract; defTimer = spawner.timer;
+        //defSpawnrate = spawner.spawnTime; defSubtract = spawner.spawnTimeSubtract; defTimer = spawner.tim;
         pusType = powerUpScriptable.Type.empty;
     }
     public void randomPu(SpriteRenderer sr)
@@ -30,7 +30,7 @@ public class powerUpHandler : MonoBehaviour // Lucas
         {
             default:
             case powerUpScriptable.Type.empty:
-                spawner.spawnrate = defSpawnrate;
+                ///spawner.spawnrate = defSpawnrate;
                 break;
             case powerUpScriptable.Type.freeze:
                 

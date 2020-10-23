@@ -5,6 +5,8 @@ public class Player : MonoBehaviour     //Anton
 {
     public Text livesText, scoreText, highsScoreText;
     public Sprite mouseCursor;
+
+    private menuController menu;
     
     public float scorePoints;
     
@@ -14,6 +16,8 @@ public class Player : MonoBehaviour     //Anton
     string scorePath = "highScorePath";
     private void Start()
     {
+        menu = FindObjectOfType<menuController>();
+
         Cursor.SetCursor(mouseCursor.texture, Vector2.zero, CursorMode.Auto);   //Lucas
         highScore = PlayerPrefs.GetFloat(scorePath, 0f); //Lucas
     }
@@ -22,7 +26,7 @@ public class Player : MonoBehaviour     //Anton
         if(lives <= 0)
         {
             OnSave();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
+            menu.restart();
         }
         livesText.text = "Lives: " + lives;
         scoreText.text = "Score: " + scorePoints.ToString("0");
