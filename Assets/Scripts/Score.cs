@@ -10,8 +10,8 @@ public class Score : MonoBehaviour
     public Button increase;
     public Button save;
 
-    public int score = 0;
-    public int highScore = 0;
+    int score = 0;
+    int highScore = 0;
     string scorePath = "highScorePath";
     void Start()
     {

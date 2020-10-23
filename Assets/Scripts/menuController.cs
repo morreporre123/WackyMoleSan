@@ -1,19 +1,14 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.SceneManagement;
-
-public class menuController : MonoBehaviour
+public class menuController : MonoBehaviour //Lucas
 {
-    public string playableSceneName;
     public void play()
     {
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);        //För att ladda in rätt scen
     }
     public void exit()
     {
-        Application.Quit();
-        //För att stänga spelet i editor:
-        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();     //för att stänga spelet
+        UnityEditor.EditorApplication.isPlaying = false; // för att stänga spelet i editor
     }
 }
