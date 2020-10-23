@@ -7,13 +7,12 @@ public class powerUpScriptable : ScriptableObject // Lucas
 {
     public float duration;
     public Sprite powerUpSprite;
-    public enum Type
+    public enum Type   //alla olika typer av powerups
     {
         empty,
-        freeze,
-        Hej,
-        test,
-        Anton
+        doublePoints,
+        moreLife,
+        slowerSpawnTime
     }
     public Type type;
 }

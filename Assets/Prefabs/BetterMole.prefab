@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1074589203695061215}
-  camShake: {fileID: 0}
+  isMole: 1
 --- !u!60 &1074589203695061203
 PolygonCollider2D:
   m_ObjectHideFlags: 0

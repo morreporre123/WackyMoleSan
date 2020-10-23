@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eab66c10451b4a042b0260ab7dc07f0c, type: 3}
   m_Name: PowerUp 2
   m_EditorClassIdentifier: 
-  duration: 2
+  duration: 0.001
   powerUpSprite: {fileID: 21300000, guid: ae098ce754ef473458d0e4d7a8d2f297, type: 3}
-  type: 3
+  type: 2

@@ -195,7 +195,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb48a2dd59d4b649817b5d60db4ab55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawner: {fileID: 0}
+  player: {fileID: 0}
   canSpawn: 1
+  startTimer: 0
   despawnTimer: 2
 --- !u!1 &248835561
 GameObject:
@@ -479,7 +482,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb48a2dd59d4b649817b5d60db4ab55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawner: {fileID: 0}
+  player: {fileID: 0}
   canSpawn: 1
+  startTimer: 0
   despawnTimer: 2
 --- !u!1 &433034533
 GameObject:
@@ -766,7 +772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88a7c90cee765840987104b6d04d5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawner: {fileID: 883970179}
+  powerUpText: {fileID: 1096075814}
   sTypes:
   - {fileID: 11400000, guid: cfabaf78738d2f14e9bde66f3bb7e1e6, type: 2}
   - {fileID: 11400000, guid: 0a61972d63a801d4087036095d157030, type: 2}
@@ -1037,7 +1043,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb48a2dd59d4b649817b5d60db4ab55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawner: {fileID: 0}
+  player: {fileID: 0}
   canSpawn: 1
+  startTimer: 0
   despawnTimer: 2
 --- !u!1 &761363834
 GameObject:
@@ -1202,8 +1211,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 883970180}
-  - component: {fileID: 883970179}
-  - component: {fileID: 883970181}
   - component: {fileID: 883970182}
   m_Layer: 0
   m_Name: spawnManager
@@ -1212,28 +1219,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &883970179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 883970178}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2ace128b7b22f447a22899242a041e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnrate: 3
-  subtract: 0.1
-  timer: 0
-  mole: {fileID: 0}
-  spawnPoints:
-  - {fileID: 1371859703}
-  - {fileID: 2092995738}
-  - {fileID: 2036976807}
-  - {fileID: 694830386}
-  - {fileID: 370834073}
 --- !u!4 &883970180
 Transform:
   m_ObjectHideFlags: 0
@@ -1248,33 +1233,6 @@ Transform:
   m_Father: {fileID: 1009855812}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &883970181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 883970178}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08f1ffb742dddd944bf6db3586640d03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moles:
-  - {fileID: 1371859705}
-  - {fileID: 2092995740}
-  - {fileID: 2036976809}
-  - {fileID: 694830388}
-  - {fileID: 370834075}
-  - {fileID: 48628668}
-  molePrefab: {fileID: 3966819558875623027, guid: 0891b35dd373dd1478388f1a13c544cb,
-    type: 3}
-  powerUpPrefab: {fileID: 2654240547247613103, guid: 078cb39e1d95d2f40ba9b60557959145,
-    type: 3}
-  spawnTimer: 2
-  originSpawnTimer: 0
-  spawnMultiplier: 0.05
-  chanceForPowerUp: 10
 --- !u!114 &883970182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1302,6 +1260,8 @@ MonoBehaviour:
   maxPointsFromMole: 10
   spawnTimeSubtract: 0
   spawnTimeUntilZero: 320
+  o_spawnTime: 0
+  pointMultiplier: 1
 --- !u!1 &1000594989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,6 +1475,84 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1024977427}
+  m_CullTransparentMesh: 0
+--- !u!1 &1096075812
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1096075813}
+  - component: {fileID: 1096075815}
+  - component: {fileID: 1096075814}
+  m_Layer: 5
+  m_Name: powerUpText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1096075813
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096075812}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1450830363}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -66}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &1096075814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096075812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: f2c4c3aa7a08e3d42ba73d250dcd7e10, type: 3}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1096075815
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096075812}
   m_CullTransparentMesh: 0
 --- !u!1 &1151219760
 GameObject:
@@ -1741,9 +1779,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'highscore
-
-'
+  m_Text: 
 --- !u!222 &1338471466
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1843,7 +1879,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb48a2dd59d4b649817b5d60db4ab55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawner: {fileID: 0}
+  player: {fileID: 0}
   canSpawn: 1
+  startTimer: 0
   despawnTimer: 2
 --- !u!1 &1450830359
 GameObject:
@@ -1938,6 +1977,7 @@ RectTransform:
   - {fileID: 1983465333}
   - {fileID: 761363835}
   - {fileID: 1338471464}
+  - {fileID: 1096075813}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2402,7 +2442,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb48a2dd59d4b649817b5d60db4ab55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawner: {fileID: 0}
+  player: {fileID: 0}
   canSpawn: 1
+  startTimer: 0
   despawnTimer: 2
 --- !u!1 &2082920108
 GameObject:
@@ -2578,7 +2621,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb48a2dd59d4b649817b5d60db4ab55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawner: {fileID: 0}
+  player: {fileID: 0}
   canSpawn: 1
+  startTimer: 0
   despawnTimer: 2
 --- !u!1 &2141408631
 GameObject:

@@ -6,9 +6,7 @@ public class Kill : MonoBehaviour
 {
     //Anton
     private Player player;
-    private moleSpawnerv2 spawner;
-
-    public indMole spawnedFrom;
+    private MoleSpawner spawner;
 
     public CameraShake cameraShake;
 
@@ -18,12 +16,12 @@ public class Kill : MonoBehaviour
     private void Awake()
     {
         player = FindObjectOfType<Player>();
-        spawner = FindObjectOfType<moleSpawnerv2>();
+        spawner = FindObjectOfType<MoleSpawner>();
     }
     private void OnMouseDown()
     {
         hasClicked = true;
-        spawner.despawn(gameObject, true, points);
+        //spawner.despawn(gameObject, true, points);
     }
     private void Update()
     {
