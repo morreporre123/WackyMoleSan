@@ -27,6 +27,6 @@ public class Kill : MonoBehaviour
     }
     private void Update()
     {
-        points = Mathf.Lerp(points, 0, spawnedFrom.despawnTimer);
+        //points = Mathf.Lerp(points, 0, spawnedFrom.despawnTimer);
     }
 }
