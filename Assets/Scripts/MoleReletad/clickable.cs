@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class clickable : MonoBehaviour
 {
+    //Lucas & Anton
     Player prefs;
-    bool start;
-    float timeToLive, o_timeToLive, maxPoints;
+    [SerializeField] Animator anim;
+    [SerializeField] CameraShake camShake;
+    bool start, isDead = false;
+    float timeToLive, o_timeToLive, maxPoints, timer;
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
     private void Awake()
     {
         prefs = FindObjectOfType<Player>();
     }
     private void Update()
     {
+        timer += Time.deltaTime;
+
+        anim.SetFloat("SpawnYes", timer);
+
         if (start)
         {
             print("started timer");
@@ -28,7 +39,10 @@ public class clickable : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        Destroy(gameObject);
+        isDead = true;
+        StartCoroutine(camShake.Shake(0.1f, 0.3f));
+        anim.SetBool("IsDead", true);
+        Destroy(gameObject, 0.3f);
         prefs.scorePoints += (timeToLive / o_timeToLive) * maxPoints;
     }
     public void live(float t, float maxP)
