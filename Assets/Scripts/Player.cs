@@ -15,9 +15,10 @@ public class Player : MonoBehaviour     //Anton
     float highScore = 0;
     string scorePath = "highScorePath";
 
-    bool isPaused = false;
+    public bool isPaused = false;
     private void Start()
     {
+        Time.timeScale = 1;
         menu = FindObjectOfType<menuController>();
 
         Cursor.SetCursor(mouseCursor.texture, Vector2.zero, CursorMode.Auto);   //Lucas
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour     //Anton
         if(lives <= 0)
         {
             OnSave();
+            menu.pause(true);
         }
         livesText.text = "Lives: " + lives;
         scoreText.text = "Score: " + scorePoints.ToString("0");
@@ -35,7 +37,7 @@ public class Player : MonoBehaviour     //Anton
 
         if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
         {
-            menu.pause();
+            menu.pause(false);
             isPaused = true;
         }
     }
