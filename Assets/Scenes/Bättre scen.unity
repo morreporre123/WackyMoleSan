@@ -195,11 +195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb48a2dd59d4b649817b5d60db4ab55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawner: {fileID: 0}
-  player: {fileID: 0}
-  canSpawn: 1
-  startTimer: 0
-  despawnTimer: 2
 --- !u!1 &248835561
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,11 +477,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb48a2dd59d4b649817b5d60db4ab55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawner: {fileID: 0}
-  player: {fileID: 0}
-  canSpawn: 1
-  startTimer: 0
-  despawnTimer: 2
 --- !u!1 &433034533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,11 +1033,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb48a2dd59d4b649817b5d60db4ab55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawner: {fileID: 0}
-  player: {fileID: 0}
-  canSpawn: 1
-  startTimer: 0
-  despawnTimer: 2
 --- !u!1 &761363834
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,7 +1128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &818101833
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1879,11 +1864,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb48a2dd59d4b649817b5d60db4ab55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawner: {fileID: 0}
-  player: {fileID: 0}
-  canSpawn: 1
-  startTimer: 0
-  despawnTimer: 2
 --- !u!1 &1450830359
 GameObject:
   m_ObjectHideFlags: 0
@@ -2019,7 +1999,8 @@ MonoBehaviour:
   livesText: {fileID: 761363836}
   scoreText: {fileID: 1983465334}
   highsScoreText: {fileID: 1338471465}
-  mouseCursor: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  mouseCursor: {fileID: -4118783260445807186, guid: fd9bb5892e7edae468c14576ba51c9a4,
+    type: 3}
   scorePoints: 0
   lives: 3
   isPaused: 0
@@ -2442,11 +2423,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb48a2dd59d4b649817b5d60db4ab55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawner: {fileID: 0}
-  player: {fileID: 0}
-  canSpawn: 1
-  startTimer: 0
-  despawnTimer: 2
 --- !u!1 &2082920108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2621,11 +2597,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeb48a2dd59d4b649817b5d60db4ab55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawner: {fileID: 0}
-  player: {fileID: 0}
-  canSpawn: 1
-  startTimer: 0
-  despawnTimer: 2
 --- !u!1 &2141408631
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,6 @@ public class menuController : MonoBehaviour //Lucas
     public void exit()  //funktion för att stänga ner spelet/appen, Lucas
     {
         Application.Quit();     //för att stänga spelet, Lucas
-        UnityEditor.EditorApplication.isPlaying = false; // för att stänga spelet i editor, Lucas
     }
     public void pause(bool hasLost)  //funktion för att pausa spelet med en bool för att kunna skilja mellan frivillig pause och tvångspaus pga förlust, Lucas
     {
